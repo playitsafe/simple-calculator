@@ -1,41 +1,63 @@
+import * as TYPES from './constants.js';
 
+class Button {
+  constructor(id, type, value = null) {
+    this.id = id;
+    this.type = type;
+    this.value = value;
+    this.el = document.getElementById(id);
+  }
 
-const RESULT = document.getElementById('result');
-const CLEAR = document.getElementById('clear');
-const HISTORY = document.getElementById('history');
-const DIVIDE = document.getElementById('divide');
-const SEVEN = document.getElementById('seven');
-const EIGHT = document.getElementById('eight');
-const NINE = document.getElementById('nine');
-const FOUR = document.getElementById('four');
-const FIVE = document.getElementById('five');
-const SIX = document.getElementById('six');
-const ONE = document.getElementById('one');
-const TWO = document.getElementById('two');
-const THREE = document.getElementById('three');
-const PLUS = document.getElementById('plus');
-const ZERO = document.getElementById('zero');
-const DOT = document.getElementById('dot');
-const EQUAL = document.getElementById('equal');
-
-const btns = {
-  RESULT,
-  CLEAR,
-  HISTORY,
-  DIVIDE,
-  SEVEN,
-  EIGHT,
-  NINE,
-  FOUR,
-  FIVE,
-  SIX,
-  ONE,
-  TWO,
-  THREE,
-  PLUS,
-  ZERO,
-  DOT,
-  EQUAL
+  //Bind onclik function to el
+  set onclick(func) {
+    this.el.onclick = func;
+  }
 }
 
-export default btns
+const resultBtn = new Button('result', TYPES.RESULT);
+
+const clearBtn = new Button('clear', TYPES.CLEAR);
+const historyBtn = new Button('history', TYPES.HISTORY);
+
+const divideBtn = new Button('divide', TYPES.OPERATIONAL, '&divide;');
+const multiplyBtn = new Button('multiply', TYPES.OPERATIONAL, '&times;');
+const plusBtn = new Button('plus', TYPES.OPERATIONAL, '+');
+const minusBtn = new Button('minus', TYPES.OPERATIONAL, '-');
+const equalBtn = new Button('equal', TYPES.EQUAL, '=');
+
+const sevenBtn = new Button('seven', TYPES.NUMERIC, '7');
+const eightBtn = new Button('eight', TYPES.NUMERIC, '8');
+const nineBtn = new Button('nine', TYPES.NUMERIC, '9');
+const fourBtn = new Button('four', TYPES.NUMERIC, '4');
+const fiveBtn = new Button('five', TYPES.NUMERIC, '5');
+const sixBtn = new Button('six', TYPES.NUMERIC, '6');
+const oneBtn = new Button('one', TYPES.NUMERIC, '1');
+const twoBtn = new Button('two', TYPES.NUMERIC, '2');
+const threeBtn = new Button('three', TYPES.NUMERIC, '3');
+const zeroBtn = new Button('zero', TYPES.NUMERIC, '0');
+const dotBtn = new Button('dot', TYPES.NUMERIC, '.');
+
+
+const btns = {
+  resultBtn,
+  clearBtn,
+  historyBtn,
+  divideBtn,
+  multiplyBtn,
+  plusBtn,
+  minusBtn,
+  equalBtn,
+  sevenBtn,
+  eightBtn,
+  nineBtn,
+  fourBtn,
+  fiveBtn,
+  sixBtn,
+  oneBtn,
+  twoBtn,
+  threeBtn,
+  zeroBtn,
+  dotBtn
+}
+
+export default btns;
