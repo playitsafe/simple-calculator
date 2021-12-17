@@ -1,0 +1,14 @@
+.container {
+  // border: 1px solid blue;
+  max-width: 600px;
+  .calculator {
+    min-width: 100%;
+  }
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: #fff;
+  border-radius: 6px;
+}
