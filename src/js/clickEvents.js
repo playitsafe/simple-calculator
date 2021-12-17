@@ -12,18 +12,26 @@ const display = function(text) {
 
 export const numericBtnFunc = function (key) {
   return function () {
-    if (typedNums.length === 0 && btns[key].value === '0') {
-      return;
-    }
+    // if (typedNums.length === 0 && calculator.operatorType == null && btns[key].value === '0' && typedNums.includes('.')) {
+    //   console.log(11111)
+    //   return;
+    // }
     typedNums.push(btns[key].value);
-    const parsedNum = typedNums.join('') === '.' ? 0 : parseFloat(typedNums.join(''));
+    console.log('typedNums', typedNums);
+    const concatTypedNums = typedNums.join('');
+    // If only typed .
+    let parsedNum = 0;
+    if (concatTypedNums !== '.') {
+      parsedNum = parseFloat(concatTypedNums);
+    }
     if (calculator.operatorType === null) {
       calculator.firstArg = parsedNum;
-      screenText = parsedNum;
+      screenText = concatTypedNums;
     } else {
       calculator.secondArg = parsedNum;
-      screenText = `${calculator.firstArg} ${calculator.operatorType} ${parsedNum}`;
+      screenText = `${calculator.firstArg} ${calculator.operatorType} ${concatTypedNums}`;
     }
+    console.log(calculator)
     display(screenText);
   }
 }
