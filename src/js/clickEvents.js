@@ -12,12 +12,10 @@ const display = function(text) {
 
 export const numericBtnFunc = function (key) {
   return function () {
-    // if (typedNums.length === 0 && calculator.operatorType == null && btns[key].value === '0' && typedNums.includes('.')) {
-    //   console.log(11111)
-    //   return;
-    // }
+    if (typedNums.length === 0 && btns[key].value === '0' && !typedNums.includes('.')) {
+      return;
+    }
     typedNums.push(btns[key].value);
-    console.log('typedNums', typedNums);
     const concatTypedNums = typedNums.join('');
     // If only typed .
     let parsedNum = 0;
@@ -31,7 +29,6 @@ export const numericBtnFunc = function (key) {
       calculator.secondArg = parsedNum;
       screenText = `${calculator.firstArg} ${calculator.operatorType} ${concatTypedNums}`;
     }
-    console.log(calculator)
     display(screenText);
   }
 }
