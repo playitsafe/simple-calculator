@@ -12,7 +12,7 @@ const display = function(text) {
 
 export const numericBtnFunc = function (key) {
   return function () {
-    if (typedNums.length === 0 && btns[key].value === '0' && !typedNums.includes('.')) {
+    if (typedNums.length !== 0 && btns[key].value === '0' && !typedNums.includes('.') && typedNums.includes('0')) {
       return;
     }
     typedNums.push(btns[key].value);
