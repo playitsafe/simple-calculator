@@ -4,6 +4,17 @@
 .container .calculator {
   min-width: 100%;
 }
+.container .calculator__result {
+  border-radius: 10px;
+}
+.container .calculator .button {
+  border-radius: 10px;
+  transition: all ease-in-out 0.1s;
+  opacity: 0.8;
+}
+.container .calculator .button:active {
+  opacity: 1;
+}
 
 .dot {
   height: 10px;
