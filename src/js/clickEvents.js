@@ -48,7 +48,8 @@ export const equalBtnFunc = function () {
   history = screenText;
   screenText = '0';
   typedNums = [];
-  calculator = new Calculator();
+  const prevResult = calculator.result === 'Infinity' ? 0 : parseFloat(calculator.result);
+  calculator = new Calculator(prevResult);
 }
 
 export const clearBtnFunc = function() {
