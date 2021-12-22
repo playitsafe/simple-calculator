@@ -6,9 +6,6 @@ const NUMERIC = 'numeric';
 const OPERATIONAL = 'operational';
 const EQUAL = 'equal';
 
-// declare calculator status
-// const 
-
 export {
   RESULT,
   CLEAR,

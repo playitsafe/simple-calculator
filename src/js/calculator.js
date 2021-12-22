@@ -11,7 +11,6 @@ const math = {
   }
 }
 
-
 export default class Calculator {
   constructor(firstArg = 0, secondArg = 0, operatorType = null, result = 0) {
     this.firstArg = firstArg;
