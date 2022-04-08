@@ -1,11 +1,17 @@
 # simple-calculator
-Web-based simple calculator with vanilla js
+Web-based simple calculator with vanilla js.
+Frameworks used in this project:
+- Bootstrap CSS
+- [trianglify.js](https://github.com/qrohlf/trianglify)
+
 
 ## Get Started
-### To compile sass styles, simply run
+1. Clone the repository
+```
+git clone git@github.com:playitsafe/simple-calculator.git
+```
+2. To compile sass styles and run the project, simply run
 ```bash
-npm run sass
+npm run start
 ```
 
-### Run App
-Once scss styles are compiled, simply open `index.html` in the root fold with a web server.
